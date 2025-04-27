@@ -1,29 +1,38 @@
-# Filecoin Storage Manager
+# Builder_verse
 
-A smart contract for managing Filecoin storage deals on the Calibration testnet. This contract facilitates the creation, verification, and completion of storage deals between clients and providers.
+Builder_verse is a decentralized application (dApp) that combines Web3 technologies with advanced AI capabilities to create a comprehensive platform for developers and builders. The platform integrates Filecoin storage solutions, sentiment analysis, and various blockchain operations.
 
 ## Features
 
-- Provider registration and staking
-- Deal creation with Filecoin-specific parameters
-- Deal verification and completion
-- FIL token integration
-- Upgradeable contract design
-- Comprehensive event logging
+### Core Components
+- **Web3 Integration**: Seamless blockchain interaction with Coinbase Wallet and other Web3 providers
+- **Filecoin Storage**: Secure and decentralized file storage management
+- **Sentiment Analysis**: AI-powered sentiment analysis for text data
+- **Token Operations**: Comprehensive token management and operations
+- **NFT Operations**: NFT creation, management, and interaction
+- **Base Balance**: Real-time balance tracking and management
+
+### Technical Stack
+- **Frontend**: Next.js with TypeScript
+- **Smart Contracts**: Solidity with OpenZeppelin
+- **Blockchain**: Filecoin Calibration Testnet
+- **AI Integration**: Sentiment analysis capabilities
+- **Web3**: Coinbase Wallet integration
 
 ## Prerequisites
 
 - Node.js (v16 or later)
 - npm or yarn
-- MetaMask or similar wallet
+- MetaMask or Coinbase Wallet
 - tFIL tokens (from Calibration faucet)
+- Git
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd builder-verse
+git clone https://github.com/luckywemo/builder_Verse.git
+cd builder_Verse
 ```
 
 2. Install dependencies:
@@ -31,56 +40,131 @@ cd builder-verse
 npm install
 ```
 
-3. Create a `.env` file:
+3. Create a `.env` file in the root directory:
 ```
 PRIVATE_KEY=your_private_key_here
+NEXT_PUBLIC_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+NEXT_PUBLIC_CHAIN_ID=314159
 ```
 
-## Deployment
+## Project Structure
 
-1. Get tFIL tokens from the Calibration faucet:
-   - Visit: https://faucet.calibration.fildev.network/
-   - Request tFIL for your address
+```
+builder_Verse/
+├── src/
+│   ├── app/                 # Next.js app directory
+│   ├── components/          # React components
+│   ├── config/             # Configuration files
+│   ├── contracts/          # Smart contracts
+│   └── styles/             # Global styles
+├── public/                 # Static assets
+├── scripts/               # Deployment scripts
+└── tests/                 # Test files
+```
 
-2. Deploy the contract:
+## Smart Contracts
+
+### FilecoinStorageManager
+- Manages storage deals on Filecoin
+- Handles provider registration and staking
+- Facilitates deal creation and verification
+- Implements secure payment handling
+
+## Components
+
+### Web3Provider
+- Manages Web3 connection and wallet integration
+- Handles blockchain interactions
+- Provides context for Web3 operations
+
+### CoinbaseWallet
+- Implements Coinbase Wallet integration
+- Handles wallet connection and disconnection
+- Manages account information
+
+### TokenOperations
+- Handles token transfers and approvals
+- Manages token balances
+- Implements token-related operations
+
+### NftOperations
+- Manages NFT creation and transfer
+- Handles NFT metadata
+- Implements NFT-related operations
+
+### SentimentAnalyzer
+- Provides sentiment analysis functionality
+- Processes text data
+- Returns sentiment scores
+
+## Development
+
+1. Start the development server:
+```bash
+npm run dev
+```
+
+2. Run tests:
+```bash
+npm test
+```
+
+3. Deploy smart contracts:
 ```bash
 npm run deploy
 ```
 
-## Contract Functions
+## Deployment
 
-### Provider Functions
-- `registerProvider(name, providerId)`: Register as a storage provider
-- `stakeProvider()`: Stake tFIL tokens to become active
-- `unstakeProvider()`: Unstake and withdraw tokens
+### Smart Contracts
+1. Deploy to Filecoin Calibration:
+```bash
+npm run deploy:calibration
+```
 
-### Deal Functions
-- `createDeal(provider, size, price, duration, pieceCid, dataCid, dealProposalId)`: Create a new storage deal
-- `verifyDeal(dealId, verified)`: Verify a deal
-- `completeDeal(dealId)`: Complete and finalize a deal
-- `updateDealProposal(dealId, newDealProposalId)`: Update deal proposal ID
+2. Verify contracts:
+```bash
+npm run verify
+```
 
-### View Functions
-- `getClientDeals(client)`: Get all deals for a client
-- `getProviderDeals(provider)`: Get all deals for a provider
-- `getDealDetails(dealId)`: Get details of a specific deal
-- `getProviderDetails(provider)`: Get details of a provider
+### Frontend
+1. Build the application:
+```bash
+npm run build
+```
 
-## Network Configuration
-
-- Network: Filecoin Calibration
-- Chain ID: 314159
-- RPC URL: https://api.calibration.node.glif.io/rpc/v1
-- tFIL Token: 0x0D8Ce2A99Bb6e3B7Db580eD848240e4a0F9aE153
+2. Deploy to Vercel:
+```bash
+npm run deploy:vercel
+```
 
 ## Security Features
 
 - Reentrancy protection
-- Pausable functionality
-- Provider staking requirements
-- Comprehensive access control
-- Upgradeable contract design
+- Access control mechanisms
+- Secure wallet integration
+- Encrypted environment variables
+- Comprehensive error handling
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact the development team.
+
+## Acknowledgments
+
+- OpenZeppelin for smart contract templates
+- Filecoin for storage solutions
+- Next.js team for the framework
+- Coinbase for wallet integration
