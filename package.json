@@ -1,0 +1,43 @@
+{
+  "name": "builder-verse",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js --network calibration"
+  },
+  "dependencies": {
+    "@coinbase/onchainkit": "^0.38.7",
+    "@tanstack/react-query": "^5.72.2",
+    "@web3modal/ethereum": "^2.7.1",
+    "@web3modal/react": "^2.7.1",
+    "ethers": "^6.13.5",
+    "next": "15.2.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "viem": "^2.26.3",
+    "wagmi": "^2.14.16"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts": "^5.0.1",
+    "@openzeppelin/contracts-upgradeable": "^5.0.1",
+    "@openzeppelin/hardhat-upgrades": "^3.9.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "20.17.31",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^16.3.1",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.5",
+    "hardhat": "^2.19.4",
+    "tailwindcss": "^4",
+    "typescript": "5.8.3"
+  }
+}
