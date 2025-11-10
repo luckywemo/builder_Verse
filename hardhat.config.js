@@ -18,9 +18,9 @@ module.exports = {
     ]
   },
   networks: {
-    calibration: {
-      url: "https://api.calibration.node.glif.io/rpc/v1",
-      chainId: 314159,
+    basesepolia: {
+      url: "https://base-sepolia-rpc.publicnode.com",
+      chainId: 84532,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
     }
   },

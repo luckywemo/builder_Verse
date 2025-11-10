@@ -4,6 +4,7 @@ import { BaseBalance } from '@/components/BaseBalance';
 import { CoinbaseWallet } from '@/components/CoinbaseWallet';
 import { TokenOperations } from '@/components/TokenOperations';
 import { NftOperations } from '@/components/NftOperations';
+import { OnchainKitFeatures } from '@/components/OnchainKitFeatures';
 
 export default function Home() {
   return (
@@ -62,6 +63,7 @@ export default function Home() {
             <div className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
               <BaseBalance />
               <CoinbaseWallet />
+              <OnchainKitFeatures />
             </div>
           </div>
         </div>
